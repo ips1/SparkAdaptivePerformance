@@ -3,4 +3,5 @@
   */
 trait AdaptiveTest {
   def runTest(configuration: AdaptiveConfiguration)
+  def initSpark(configuration: AdaptiveConfiguration) = SparkInitializer.initSession(configuration, this.getClass.getName)
 }
