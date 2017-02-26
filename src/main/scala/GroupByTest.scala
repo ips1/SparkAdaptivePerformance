@@ -9,7 +9,7 @@ import scala.util.Random
   */
 object GroupByTest extends AdaptiveTest {
   override def runTest(configuration: AdaptiveConfiguration): Unit = {
-    val spark = SparkInitializer.initSession(configuration)
+    val spark = SparkInitializer.initSession(configuration, "GroupByTest")
 
     val numIterations = 50
     val numMappers = 10

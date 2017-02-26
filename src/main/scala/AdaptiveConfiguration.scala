@@ -4,8 +4,8 @@
 class AdaptiveConfiguration(val adaptiveEnabled: Boolean,
                             val targetPostShuffleInputSize: Int,
                             val minNumPostShufflePartitions: Int) {
-  def getName: String =
-    s"AdaptiveTest enabled:$adaptiveEnabled " +
+  def getLongName(name: String): String =
+    s"$name enabled:$adaptiveEnabled " +
     s"targetSize: $targetPostShuffleInputSize " +
     s"minPartitions: $minNumPostShufflePartitions"
 }
