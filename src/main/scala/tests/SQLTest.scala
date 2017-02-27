@@ -21,7 +21,7 @@ class SQLTest(val dataSize: Int) extends AdaptiveTest[Int] {
     return data
   }
 
-  override def runTest(configuration: AdaptiveConfiguration): Unit = {
+  override def runTest(configuration: AdaptiveConfiguration): Int = {
     val spark = initSpark(configuration)
     val sqlContext = spark.sqlContext
 
@@ -37,8 +37,8 @@ class SQLTest(val dataSize: Int) extends AdaptiveTest[Int] {
       .filter(_._2.users > 200)
       .count()
 
-    println(result)
-
     spark.stop()
+
+    return result.toInt
   }
 }
