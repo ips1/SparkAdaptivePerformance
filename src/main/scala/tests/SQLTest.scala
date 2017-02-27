@@ -1,11 +1,14 @@
+package tests
+
 import datatypes.Record
+import configuration.AdaptiveConfiguration
 
 import scala.util.Random
 
 /**
   * Created by petrkubat on 26/02/2017.
   */
-class SQLTest(val dataSize: Int) extends AdaptiveTest {
+class SQLTest(val dataSize: Int) extends AdaptiveTest[Int] {
   private def generateData(count: Int) : Seq[Record] = {
     val rand = new Random(42)
 
@@ -35,5 +38,7 @@ class SQLTest(val dataSize: Int) extends AdaptiveTest {
       .count()
 
     println(result)
+
+    spark.stop()
   }
 }

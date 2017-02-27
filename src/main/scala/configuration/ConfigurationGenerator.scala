@@ -1,3 +1,5 @@
+package configuration
+
 /**
   * Created by petrkubat on 26/02/2017.
   */

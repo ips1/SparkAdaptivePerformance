@@ -1,5 +1,8 @@
+package tests
+
 import java.io.{File, PrintWriter}
 
+import configuration.AdaptiveConfiguration
 import org.apache.spark.storage.StorageLevel
 
 import scala.util.Random

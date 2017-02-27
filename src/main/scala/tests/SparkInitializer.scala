@@ -1,10 +1,13 @@
+package tests
+
+import configuration.AdaptiveConfiguration
 import org.apache.spark.sql.SparkSession
 
 /**
   * Created by petrkubat on 19/02/2017.
   */
 object SparkInitializer {
-  def initSession(adaptiveConfiguration: AdaptiveConfiguration, name: String = "AdaptiveTest") : SparkSession = SparkSession
+  def initSession(adaptiveConfiguration: AdaptiveConfiguration, name: String = "tests.AdaptiveTest") : SparkSession = SparkSession
       .builder
       .appName(adaptiveConfiguration.getLongName(name))
       .config("spark.sql.adaptive.enabled", adaptiveConfiguration.adaptiveEnabled)
