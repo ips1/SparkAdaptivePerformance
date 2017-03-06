@@ -11,8 +11,8 @@ import scala.util.Random
   * Created by petrkubat on 19/02/2017.
   */
 object GroupByTest extends AdaptiveTest[Unit] {
-  override def runTest(configuration: AdaptiveConfiguration): Unit = {
-    val spark = SparkInitializer.initSession(configuration, "GroupByTest")
+  override def runTest(initializer: SparkInitializer, configuration: AdaptiveConfiguration): Unit = {
+    val spark = initializer.initSession(configuration, "GroupByTest")
 
     val numIterations = 50
     val numMappers = 10

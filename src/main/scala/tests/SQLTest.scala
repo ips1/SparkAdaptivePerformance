@@ -21,8 +21,8 @@ class SQLTest(val dataSize: Int) extends AdaptiveTest[Int] {
     return data
   }
 
-  override def runTest(configuration: AdaptiveConfiguration): Int = {
-    val spark = initSpark(configuration)
+  override def runTest(initializer: SparkInitializer, configuration: AdaptiveConfiguration): Int = {
+    val spark = initSpark(initializer, configuration)
     val sqlContext = spark.sqlContext
 
     import spark.implicits._

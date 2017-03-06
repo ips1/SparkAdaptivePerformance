@@ -4,14 +4,8 @@ import configuration.AdaptiveConfiguration
 import org.apache.spark.sql.SparkSession
 
 /**
-  * Created by petrkubat on 19/02/2017.
+  * Created by pk250187 on 3/6/17.
   */
-object SparkInitializer {
-  def initSession(adaptiveConfiguration: AdaptiveConfiguration, name: String = "tests.AdaptiveTest") : SparkSession = SparkSession
-      .builder
-      .appName(adaptiveConfiguration.getLongName(name))
-      .config("spark.sql.adaptive.enabled", adaptiveConfiguration.adaptiveEnabled)
-      .config("spark.sql.adaptive.shuffle.targetPostShuffleInputSize", adaptiveConfiguration.targetPostShuffleInputSize)
-      .config("spark.sql.adaptive.minNumPostShufflePartitions", adaptiveConfiguration.minNumPostShufflePartitions)
-      .getOrCreate()
+trait SparkInitializer {
+  def initSession(adaptiveConfiguration: AdaptiveConfiguration, name: String = "tests.AdaptiveTest") : SparkSession
 }
