@@ -20,5 +20,5 @@ class AdaptiveTestRunner(val sparkInitializer: SparkInitializer, testRepeatCount
     .foreach(test =>
       caseProvider.getCases.foreach(testCase =>
         (1 to testRepeatCount).foreach(it =>
-          test.runTest(sparkInitializer, testCase))))
+          runTest(test, testCase))))
 }
