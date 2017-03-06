@@ -5,4 +5,5 @@ package logging
   */
 trait Log {
   def log(text: String)
+  def close()
 }

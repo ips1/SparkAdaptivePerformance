@@ -13,5 +13,5 @@ class FileLog(val fileName: String) extends Log {
     writer.flush()
   }
 
-  def close = writer.close()
+  override def close = writer.close()
 }
